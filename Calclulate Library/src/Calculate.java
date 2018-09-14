@@ -70,8 +70,21 @@ public static int min (int num1, int num2) {
 	}
 }
 public static double round2 (double num) {
-	if ((num*1000)%10<5) {
-		return (num*100+1)
+	int timesthousand = (int) (num*1000);
+	int timeshundred = (int) (num*100);
+	if(timesthousand%10<5) {
+		return (timeshundred)/100.0;
+	} else {
+		return (timeshundred+1)/100.0;
 	}
 }
+public static double exponent (double num1, int num2) {
+	double answer=num1;
+	for (int i=1; i<=num2; i++) {
+		answer=num1*num1;
+	}
+		return answer;
 }
+}
+
+
