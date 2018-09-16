@@ -157,7 +157,7 @@ public static int gcf (int num1, int num2) {
 //returns approximation of square root of value passed rounded to two decimal places
 public static double sqrt (double num) {
 	if (num==0) {
-		return 0;
+		return 0.00;
 	}
 	double estimate=1;
 	double difference=1;
