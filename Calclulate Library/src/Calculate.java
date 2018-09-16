@@ -115,7 +115,7 @@ public static double sqrt (double num) {
 	if (num==0) {
 		return 0;
 	}
-	double estimate=num/2;
+	double estimate=1;
 	double difference=num-estimate*estimate;
 	while(absValue(difference)>=.005) {
 		estimate=((num/estimate)+estimate)/2;
