@@ -80,11 +80,48 @@ public static double round2 (double num) {
 }
 public static double exponent (double num1, int num2) {
 	double answer=num1;
-	for (int i=1; i<=num2; i++) {
-		answer=num1*num1;
+	for (int i=1; i<num2; i++) {
+		answer=answer*num1;
 	}
 		return answer;
 }
+public static int factorial (int num) {
+	int answer=1;
+	for (int i=1; i<=num; i++) {
+		answer=answer*i;
+	}
+		return answer;
 }
-
+public static boolean isPrime (int num) {
+	boolean noprime=true;
+	for (int i=2; i<num; i++) {
+		if(isDivisibleBy(num, i)) {
+			noprime=false;
+		}
+	}
+	return noprime;
+}
+public static int gcf (int num1, int num2) {
+	int answer=1;
+	for (int i=num1; i>=1; i--) {
+		if(isDivisibleBy(num1, i)&&(isDivisibleBy(num2, i))) {
+			answer=i;
+			i=0;
+		}
+	}
+	return answer;
+}
+public static double sqrt (double num) {
+	if (num==0) {
+		return 0;
+	}
+	double estimate=num/2;
+	double difference=num-estimate*estimate;
+	while(absValue(difference)>=.005) {
+		estimate=((num/estimate)+estimate)/2;
+		difference=num-estimate*estimate;
+	}
+	return round2(estimate);
+}
+}	
 
