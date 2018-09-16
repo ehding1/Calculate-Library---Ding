@@ -8,6 +8,7 @@ public class DoMath {
 		System.out.println(Calculate.square(5));
 		System.out.println(Calculate.cube(5));
 		System.out.println(Calculate.average(5.0, 6.3));
+		System.out.println(Calculate.average(5.0, 6.0, 7.0));
 		System.out.println(Calculate.toDegrees(3.14159));
 		System.out.println(Calculate.toRadians(180));
 		System.out.println(Calculate.discriminant(1, 2, 3));
@@ -24,7 +25,7 @@ public class DoMath {
 		System.out.println(Calculate.factorial(4));
 		System.out.println(Calculate.isPrime(8));
 		System.out.println(Calculate.gcf(81, 27));
-		System.out.println(Calculate.sqrt(24.25346));
+		System.out.println(Calculate.sqrt(75.2523));
 	}
 
 }
