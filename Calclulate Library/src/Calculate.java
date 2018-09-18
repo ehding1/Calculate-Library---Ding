@@ -102,7 +102,7 @@ public static int min (int num1, int num2) {
 	}
 }
 
-//rounds double correctly to 2 decimal places 
+//rounds double correctly to two decimal places 
 public static double round2 (double num) {
 	int timesthousand = (int) (num*1000);
 	int timeshundred = (int) (num*100);
