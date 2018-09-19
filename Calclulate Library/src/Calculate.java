@@ -26,13 +26,13 @@ public static double average (double num1, double num2, double num3) {
 }
 
 //converts angle measure given in radians to degrees
-public static double toDegrees (double number) {
-	return number*180/3.14159;
+public static double toDegrees (double radians) {
+	return radians*180/3.14159;
 }
 
 //converts angle measure given in degrees to radians
-public static double toRadians (double number) {
-	return number*3.14159/180;
+public static double toRadians (double degrees) {
+	return degrees*3.14159/180;
 }
 
 //provides coefficients of quadratic equation in standard form and returns value of discriminant
@@ -41,23 +41,27 @@ public static double discriminant (double a, double b, double c) {
 }
 
 //converts mixed number into improper fraction
-public static String toImproperFrac (int num1, int num2, int num3) {
-	return num1*num3+num2+"/"+num3;
+public static String toImproperFrac (int wholenum, int numerator, int denominator) {
+	return wholenum*denominator+numerator+"/"+denominator;
 }
 
 //converts improper fraction into mixed numbers
-public static String toMixedNum (int num1, int num2) {
-	return num1/num2+"_"+7%2+"/"+num2;
+public static String toMixedNum (int numerator, int denominator) {
+	return numerator/denominator+"_"+numerator%denominator+"/"+denominator;
 }
 
 //converts binomial multiplication of form (ax+b)(cx+d) into quadratic equation of form ax^2+bx+c
-public static String foil (int num1, int num2, int num3, int num4, String n) {
-	return num1*num3+"n^2+"+(num1*num4+num2*num3)+"n+"+num2*num4; 
+public static String foil (int a, int b, int c, int d, String n) {
+	return a*c+"n^2+"+(a*d+b*c)+"n+"+b*d; 
 }
 
 //determines whether or not one integer is evenly divisible by another
-public static boolean isDivisibleBy (int num1, int num2) {
-	if (num1%num2==0) {
+public static boolean isDivisibleBy (int dividend, int divisor) {
+	if (divisor==0) {
+		System.out.println("Return false indicates divisor of zero is invalid input.");
+		return false;
+	} 
+	if (dividend%divisor==0) {
 		return true;
 	} else {
 		return false;
@@ -114,16 +118,27 @@ public static double round2 (double num) {
 }
 
 //raises value to positive integer power
-public static double exponent (double num1, int num2) {
-	double answer=num1;
-	for (int i=1; i<num2; i++) {
-		answer=answer*num1;
+public static double exponent (double base, int exponent) {
+	if (exponent<=0) {
+		System.out.println("Return zero indicates negative or zero integer power is an invalid input.");
+		return 0.0;
+	}
+	double answer=base;
+	for (int i=1; i<exponent; i++) {
+		answer=answer*base;
 	}
 		return answer;
 }
 
 //returns factorial of value passed
 public static int factorial (int num) {
+	if (num<0) {
+		System.out.println("Return zero indicates negative number is an invalid input.");
+		return 0;
+	}
+	if (num==0) {
+		return 1;
+	}
 	int answer=1;
 	for (int i=1; i<=num; i++) {
 		answer=answer*i;
@@ -156,6 +171,10 @@ public static int gcf (int num1, int num2) {
 
 //returns approximation of square root of value passed rounded to two decimal places
 public static double sqrt (double num) {
+	if (num<0) {
+		System.out.println("Return zero indicates negative number is invalid input.");
+		return 0.0;
+	}
 	double estimate=1;
 	double difference=1;
 	while(absValue(difference)>=.005) {
