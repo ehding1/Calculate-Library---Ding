@@ -174,7 +174,9 @@ public static double sqrt (double num) {
 	if (num<0) {
 		System.out.println("Return zero indicates negative number is invalid input.");
 		return 0.0;
-	}
+	} if (num==0) {
+		return 0.0;
+	} else {
 	double estimate=1;
 	double difference=1;
 	while(absValue(difference)>=.005) {
@@ -183,5 +185,22 @@ public static double sqrt (double num) {
 	}
 	return round2(estimate);
 }
-}	
+}
 
+//uses coefficients of quadratic equation in standard form and quadratic formula to approximate real roots
+public static String quadForm (int a, int b, int c) {
+	double root1=round2((-b-(sqrt(discriminant(a, b, c))))/(2*a));
+	double root2=round2((-b+(sqrt(discriminant(a, b, c))))/(2*a));
+	if (discriminant(a, b, c)<0) {
+		return "no real roots" ;
+	} if (discriminant(a, b, c)==0) {
+		return root1+" ";
+	} else {
+		if (root1<root2) {
+			return root1+" and "+root2;
+		} else {
+			return root2+" and "+root1;
+		}
+	}	
+}
+}

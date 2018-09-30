@@ -25,7 +25,8 @@ public class DoMath {
 		System.out.println(Calculate.factorial(-7));
 		System.out.println(Calculate.isPrime(7));
 		System.out.println(Calculate.gcf(14, 21));
-		System.out.println(Calculate.sqrt(-8));
+		System.out.println(Calculate.sqrt(8));
+		System.out.println(Calculate.quadForm(1, -9, 6));
 	}
 
 }
