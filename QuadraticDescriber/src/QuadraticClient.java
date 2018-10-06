@@ -1,20 +1,32 @@
 import java.util.*;
 
 /* This class is client code that uses the the quadratic class to perform calculations to describe characteristics of quadratic graph
+ * author@Eric Ding
  * version@10-1-18
  */
 
-public class QuadraticClient {
+public class QuadraticClient {	
 
 	public static void main(String[] args) {
-		System.out.println("Please enter the coefficients off a quadratic function in order of a, b, and c.");
-		Scanner console = new Scanner (System.in);
-		double a = console.nextDouble();
-		double b = console.nextDouble();
-		double c = console.nextDouble();
-		console.close();
-		System.out.println(Quadratic.quadrDescriber(a, b, c));
-		//add throw exception for a=0
+		boolean done=true;
+		while(done==true) {
+			System.out.println("Please enter the coefficients of a quadratic function and press enter.");
+			Scanner console = new Scanner (System.in);
+			System.out.println("a:");
+			double a = console.nextDouble();
+			System.out.println("b:");
+			double b = console.nextDouble();
+			System.out.println("c:");
+			double c = console.nextDouble();
+			System.out.println(Quadratic.quadrDescriber(a, b, c));
+			System.out.println("Do want to continue? If you want to quit, type quit.");
+			String d = console.nextLine();
+			if(d=="quit") {
+				done=false;
+				console.close();
+			} else {
+				done=true;
+			}	
 	}
-
+}
 }

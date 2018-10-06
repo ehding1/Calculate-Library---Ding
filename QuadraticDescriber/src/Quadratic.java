@@ -81,6 +81,6 @@ public static String quadrDescriber (double a, double b, double c) {
 	//describes intercepts of graph
 	String roots = quadForm(a, b, c);
 	
-	return "Opens "+open+"/nVertex "+vert+"/nIntercepts: "+roots;	
+	return "Description of graph of y="+a+"x^2+"+b+"x+"+c+":\n"+"Opens "+open+"\nVertex "+vert+"\nIntercepts: "+roots;	
 }
 }
