@@ -9,25 +9,29 @@ public class QuadraticClient {
 
 	public static void main(String[] args) {
 		boolean done=false;
-		do {
+		while (done==false) {
 			System.out.println("Please enter the coefficients of a quadratic function and press enter.");
 			Scanner console = new Scanner (System.in);
 			System.out.println("a:");
 			double a = console.nextDouble();
+			while (a==0) {
+				System.out.println("a=0 is not a quadratic function, enter a new value for a");
+				a = console.nextDouble();
+			}
 			System.out.println("b:");
 			double b = console.nextDouble();
 			System.out.println("c:");
 			double c = console.nextDouble();
 			System.out.println(Quadratic.quadrDescriber(a, b, c));
-			System.out.println("Do want to continue? If you want to quit, type quit.");
+			System.out.println("If you want to continue, type any letter. If you want to quit, type quit.");
 			String d = console.next();
 			if(d.equals("quit")) {
-				done=false;
-				console.close();
-			} else {
 				done=true;
+				console.close();
+				System.out.println("Thanks for playing! Smash that like button! Subscribe for more content every time Ms. Dreyer assigns it!");
+			} else {
+				done=false;
 			} 
-	} while(done==true);
-	System.out.println("Thanks for playing! Smash that like button! Subscribe for more content every time Ms. Dreyer assigns it!");
-}	
+	}	
+}
 }
