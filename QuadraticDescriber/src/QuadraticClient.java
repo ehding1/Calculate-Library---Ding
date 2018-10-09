@@ -10,7 +10,7 @@ public class QuadraticClient {
 	public static void main(String[] args) {
 		boolean done=false;
 		while (done==false) {
-			System.out.println("Please enter the coefficients of a quadratic function and press enter.");
+			System.out.println("Please enter the coefficients of a quadratic function.");
 			Scanner console = new Scanner (System.in);
 			System.out.println("a:");
 			double a = console.nextDouble();
