@@ -8,8 +8,8 @@ import java.util.*;
 public class QuadraticClient {	
 
 	public static void main(String[] args) {
-		boolean done=true;
-		while(done==true) {
+		boolean done=false;
+		do {
 			System.out.println("Please enter the coefficients of a quadratic function and press enter.");
 			Scanner console = new Scanner (System.in);
 			System.out.println("a:");
@@ -20,13 +20,14 @@ public class QuadraticClient {
 			double c = console.nextDouble();
 			System.out.println(Quadratic.quadrDescriber(a, b, c));
 			System.out.println("Do want to continue? If you want to quit, type quit.");
-			String d = console.nextLine();
-			if(d=="quit") {
+			String d = console.next();
+			if(d.equals("quit")) {
 				done=false;
 				console.close();
 			} else {
 				done=true;
-			}	
-	}
-}
+			} 
+	} while(done==true);
+	System.out.println("Thanks for playing! Smash that like button! Subscribe for more content every time Ms. Dreyer assigns it!");
+}	
 }

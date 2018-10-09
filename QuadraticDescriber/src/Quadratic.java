@@ -32,7 +32,6 @@ public class Quadratic {
 	//returns approximation of square root of value passed rounded to two decimal places
 	public static double sqrt (double num) {
 		if (num<0) {
-			System.out.println("Return zero indicates negative number is invalid input.");
 			return 0.0;
 		} if (num==0) {
 			return 0.0;
@@ -74,8 +73,8 @@ public static String quadrDescriber (double a, double b, double c) {
 	}
 	
 	//describes vertex of graph
-	double x = (-1*b)/(2*a);
-	double y = (a*x*x)+(b*x)+c;
+	double x = round2((-1*b)/(2*a));
+	double y = round2((a*x*x)+(b*x)+c);
 	String vert = "("+x+", "+y+")";
 	
 	//describes intercepts of graph
