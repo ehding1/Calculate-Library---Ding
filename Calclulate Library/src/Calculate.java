@@ -58,8 +58,7 @@ public static String foil (int a, int b, int c, int d, String n) {
 //determines whether or not one integer is evenly divisible by another
 public static boolean isDivisibleBy (int dividend, int divisor) {
 	if (divisor==0) {
-		System.out.println("Return false indicates divisor of zero is invalid input.");
-		return false;
+		throw new IllegalArgumentException("Cannot divide by zero");
 	} 
 	if (dividend%divisor==0) {
 		return true;
@@ -120,8 +119,7 @@ public static double round2 (double num) {
 //raises value to positive integer power
 public static double exponent (double base, int exponent) {
 	if (exponent<=0) {
-		System.out.println("Return zero indicates negative or zero integer power is an invalid input.");
-		return 0.0;
+		throw new IllegalArgumentException("Integer must be positive");
 	}
 	double answer=base;
 	for (int i=1; i<exponent; i++) {
@@ -133,8 +131,7 @@ public static double exponent (double base, int exponent) {
 //returns factorial of value passed
 public static int factorial (int num) {
 	if (num<0) {
-		System.out.println("Return zero indicates negative number is an invalid input.");
-		return 0;
+		throw new IllegalArgumentException("Cannot take factorial of negative number");
 	}
 	if (num==0) {
 		return 1;
@@ -172,8 +169,7 @@ public static int gcf (int num1, int num2) {
 //returns approximation of square root of value passed rounded to two decimal places
 public static double sqrt (double num) {
 	if (num<0) {
-		System.out.println("Return zero indicates negative number is invalid input.");
-		return 0.0;
+		throw new IllegalArgumentException("Cannot take square root of negative number");
 	} if (num==0) {
 		return 0.0;
 	} else {
