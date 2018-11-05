@@ -51,7 +51,7 @@ public class Quadratic {
 		double root1=round2((-b-(sqrt(discriminant(a, b, c))))/(2*a));
 		double root2=round2((-b+(sqrt(discriminant(a, b, c))))/(2*a));
 		if (discriminant(a, b, c)<0) {
-			return "no real roots" ;
+			return "no real roots";
 		} if (discriminant(a, b, c)==0) {
 			return root1+" ";
 		} else {

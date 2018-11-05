@@ -119,7 +119,7 @@ public static double round2 (double num) {
 //raises value to positive integer power
 public static double exponent (double base, int exponent) {
 	if (exponent<=0) {
-		throw new IllegalArgumentException("Integer must be positive");
+		throw new IllegalArgumentException("Integer power must be positive");
 	}
 	double answer=base;
 	for (int i=1; i<exponent; i++) {
